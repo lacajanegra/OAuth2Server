@@ -1,0 +1,75 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.db4986c3.css"> <link rel="stylesheet" href="styles/main.af335e1b.css"> </head> <body ng-app="providaApp"> <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <div ng-controller="MenucontrollerCtrl" layout="column" style="height:100%" ng-cloak> <section layout="row" flex> <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop md-whiteframe="4" ng-show="isConnected == true"> <!--    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-disable-backdrop
+        md-whiteframe="4"> --> <md-toolbar class="md-theme-indigo"> <h3 class="md-toolbar-tools" style="font-size:15px;  background-color: rgb(2,119,189) !important; padding-left:1.2em; padding-top:0.5em"><img src="images/logo_kvz.png" alt="Provida" width="110px"><!-- <strong>[Consola]</strong> --></h3> </md-toolbar> <!-- <md-content layout-padding ng-controller="LeftCtrl"> --> <md-content ng-controller="LeftCtrl"> <md-subheader class="md-no-sticky">Selecciona una opción </md-subheader> <!--  <md-item-content md-ink-ripple layout="row" >
+                    <div class="inset">
+                      <ng-md-icon icon="home">
+                    </div>
+                    <div class="inset">Dashboard</div>
+                  </md-item-content>
+
+                  <md-item-content md-ink-ripple layout="row" >
+                    <div class="inset">
+                      <ng-md-icon icon="vpn_key">
+                    </div>
+                    <div class="inset">Apps Oauth</div>
+                  </md-item-content>
+
+                    <md-item-content md-ink-ripple layout="row" >
+                    <div class="inset">
+                      <ng-md-icon icon="account_circle">
+                    </div>
+                    <div class="inset">Usuarios</div>
+                  </md-item-content>
+
+                  <md-item-content md-ink-ripple layout="row" >
+                    <div class="inset">
+                      <ng-md-icon icon="settings">
+                    </div>
+                    <div class="inset">Lorem Ipsum</div>
+                  </md-item-content> --> <md-divider></md-divider> <md-list-item class="menu-color" href="#/main"> <div class="inset"> <ng-md-icon icon="home"></ng-md-icon> </div> <div class="inset">Inicio</div> </md-list-item> <!-- <md-divider ></md-divider> --> <md-list-item class="menu-color" href="#/authapps"> <div class="inset"> <ng-md-icon icon="vpn_key"></ng-md-icon> </div> <div class="inset">Apps Oauth</div> </md-list-item> <!-- <md-divider ></md-divider> --> <md-list-item class="menu-color" href="#/users"> <div class="inset"> <ng-md-icon icon="account_circle"></ng-md-icon> </div> <div class="inset">Usuarios</div> </md-list-item> <!-- <md-divider ></md-divider> --> <md-list-item class="menu-color" ng-controller="SessionCtrl" ng-click="closeSession()"> <div class="inset"> <ng-md-icon icon="settings"></ng-md-icon> </div> <div class="inset">Salir</div> </md-list-item> <!-- <md-divider ></md-divider> --> <br> <md-button ng-click="close()" class="md-primary" hide-gt-md>Cerrar</md-button> <!-- 
+                  <md-divider ></md-divider>
+                  <md-list-item class="md-3-line"  ng-click="null">
+                    <div class="md-fab md-primary md-mini md-button md-ink-ripple" style="background: rgb(244, 67, 54);"><i class="material-icons md-24">home</i></div>
+                    <div class="md-list-item-text" layout="column">
+                      <h3><a href="#/">INICIO</a></h3>
+                    </div>
+                  </md-list-item>
+                  <md-divider ></md-divider>
+                  <md-list-item class="md-3-line"  ng-click="null">
+                    <div class="md-fab md-button md-mini md-ink-ripple" ><i class="material-icons md-24">vpn_key</i></div>
+                    <div class="md-list-item-text" layout="column">
+                      <h3><a href="#/">APLICACIONES OAUTH</a></h3>
+                    </div>
+                  </md-list-item>
+                  <md-divider ></md-divider>
+                  <md-list-item class="md-3-line"  ng-click="null">
+                    <div class="md-fab md-primary md-mini md-button md-ink-ripple" style="background: #0288D1;"><i class="material-icons md-24">account_circle</i></div>
+                    <div class="md-list-item-text" layout="column">
+                      <h3><a href="#/users">USUARIOS</a></h3>
+                    </div>
+                  </md-list-item>
+                   <md-divider ></md-divider>
+                  <md-list-item class="md-3-line"  ng-click="null">
+                    <div class="md-fab md-primary md-mini md-button md-ink-ripple" style="background: rgb(156, 39, 176);"><i class="material-icons md-24">settings</i></div>
+                    <div class="md-list-item-text" layout="column">
+                      <h3><a href="#/">LOREM IPSUM</a></h3>
+                    </div>
+                  </md-list-item>
+                  <md-divider ></md-divider>
+                  <br />
+                  <md-button ng-click="close()" class="md-primary" hide-gt-md>Cerrar</md-button> --> </md-content> </md-sidenav> <md-content flex> <div layout="column" layout-fill layout-align="top center"> <!--      <div class="header">
+                        <md-button class="md-fab md-mini md-primary md-button md-ink-ripple" style="    padding-top: 7px;" ng-click="toggleLeft()" hide-gt-md>
+                              <i class="material-icons md-48">menu</i>
+                        </md-button>
+                </div>end header --> <div class="container"> <div ng-view=""></div> </div> <div class="footer"> <div class="container"> <p><ng-md-icon icon="favorite"></ng-md-icon> from the <strong>KLABS</strong> team</p> </div> </div> <div></div> <div></div> </div> <div flex></div> </md-content> </section> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');</script> <script src="scripts/vendor.e69142c9.js"></script> <script src="scripts/scripts.5db2f8e0.js"></script> </body> </html>

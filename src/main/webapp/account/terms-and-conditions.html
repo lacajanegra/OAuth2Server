@@ -1,0 +1,38 @@
+<md-dialog aria-label="Términos y Condiciones">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools provida-background">
+        <h2 class="main-title" style="color:white">{{boxTermsTitle}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="images/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+           <md-icon md-font-icon="icon-home"
+            ng-style="{color: !font.theme && font.color, 'font-size': it.size + 'px', height: it.size + 'px'}"
+            class="step "></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>{{termsTitle}}</h2>
+      
+        <p>{{termsContent}}</p>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="print()" target="_blank" md-autofocus>
+        Descargar
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="answer('cancelled')">
+       Cancelar
+      </md-button>
+      <md-button ng-click="answer('accepted')">
+        Aceptar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

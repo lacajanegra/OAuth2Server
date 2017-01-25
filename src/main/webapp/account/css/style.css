@@ -1,0 +1,274 @@
+html{
+  background-color: white;
+}
+.md-button.md-default-theme[disabled], .md-button.md-default-theme.md-raised[disabled], .md-button.md-default-theme.md-fab[disabled] {
+    color: white !important;
+    background-color: #007CC2;
+    cursor: not-allowed;
+}
+/*.md-button{
+    color: white !important;
+}*/
+
+.error{
+    color: #ea492c;
+    font-size: 0.8em;
+}
+  .spinner-app{
+      position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* margin-left: -32px; */
+    /* margin-top: -32px; */
+    display: block;
+    /* background-color: rgba(1,1,1,0.7); */
+    background: rgba(255,255,255, 0.9);
+    z-index: 99999;
+    text-align: center;
+    padding-top: 15%;
+    //top:30%;
+}
+.center-object{
+  margin: 0 auto;
+}
+.card-media {
+  background-color: #999999; }  
+
+md-content.md-default-theme {
+  //background-color: #eee;
+}
+
+md-card {
+  background-color: #fff;
+}
+md-card h2:first-of-type {
+  margin-top: 0;
+}
+
+md-toolbar .md-button.md-default-theme {
+  border-radius: 99%;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+}
+.md-toolbar-tools-bottom :last-child {
+  opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+
+md-sidenav {
+  fill: #737373;
+}
+md-sidenav ng-md-icon {
+  position: relative;
+  top: 5px;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+md-toolbar.md-tall {
+    height: inherit !important;
+    min-height: auto !important;
+    max-height: inherit !important;
+}
+.md-button.md-default-theme[disabled], .md-button.md-default-theme.md-raised[disabled], .md-button.md-default-theme.md-fab[disabled] {
+    //color: rgba(0,0,0,0.26);
+    color: white !important;
+}
+.md-button[disabled] {
+    background-color: #007CC2 !important;
+    color: #fff;
+}
+.button-submit{
+    background-color: #007CC2 !important;
+    color: #fff;
+}
+.provida-background{
+    background-color: #007CC2;
+}
+md-content{
+    background-color: white;
+}
+/* DATE PICKER CSS*/
+.md-datepicker-input-container.md-datepicker-focused{
+  border-bottom-color: #fff; 
+}
+.md-datepicker-button {
+  display:none;
+}
+.md-icon-button+.md-datepicker-input-container {
+    margin-left: 0px;
+    width: 100%;
+}
+.md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,.md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator {
+    background: rgb(0, 124, 194);
+    color: rgba(255,255,255,0.87);
+    border-color: transparent;
+}
+.md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator {
+    border: 1px solid rgb(0, 124, 194);
+}
+.md-default-theme .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-default-theme .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator {
+    background: rgb(0, 124, 194);
+    color: rgba(255,255,255,0.87);
+    border-color: transparent;
+}
+.md-datepicker-triangle-button .md-datepicker-expand-triangle {
+    border-top-color: rgb(0, 124, 194);
+}
+
+.md-datepicker-expand-triangle {
+    top: 75%;
+    border-top: 6px solid;
+}
+.md-datepicker-open input.md-datepicker-input {
+    margin-left: 12px;
+    height:32px;
+    border-bottom-color: #a3c3d9;
+}
+.md-default-theme .md-datepicker-input-container, .md-datepicker-input-container {
+    border-bottom-color: white;
+}
+.md-datepicker-input {
+    font-size: 14px;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+    min-width: 120px;
+    max-width: 100%;
+}
+md-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 1px solid #A3C3D9;
+    border-radius: 5px;
+    padding: 7px 0px 7px 5px;
+    color: #666666;
+    height: 32px;
+    background-color: #FFF;
+    margin:0;
+}
+.md-select-value {
+    min-width: 0px;
+}
+.md-select-value .md-select-icon {
+    margin: 0;
+}
+.md-button:not([disabled]).md-focused{
+  background-color: transparent;
+}
+md-select.md-default-theme .md-select-value.md-select-placeholder, md-select .md-select-value.md-select-placeholder {
+    color: rgb(0, 124, 194);
+}
+.md-select-value .md-select-icon {
+    color: rgb(0, 124, 194);
+}
+/*.md-datepicker-input-container {
+  width: 100%;
+  margin-left: 0px;
+}*/
+.md-datepicker-input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 1px solid #A3C3D9;
+    border-radius: 5px;
+    padding: 7px 25px 7px 5px;
+    color: #666666;
+    height: 32px;
+    background-color: #FFF;
+}
+md-select.md-default-theme .md-select-value span:first-child:after, md-select .md-select-value span:first-child:after {
+    color: white;
+}
+md-select-menu md-content md-option[selected] {
+    color: #03537f;
+}
+md-select-menu.md-default-theme md-content md-option[selected]:focus, md-select-menu md-content md-option[selected]:focus, .md-button.md-default-theme.md-primary, .md-button.md-primary {
+    color: #03537f;
+}
+input{
+      font-family: "Open Sans", sans-serif;
+}
+.md-datepicker-input-container.md-datepicker-invalid {
+    border-bottom-color: transparent;
+}
+.md-datepicker-input-mask {
+    height: 0;
+}
+@media only screen and (max-width: 1024px){
+  .md-datepicker-input{
+    font-size: 15px;
+    height: 42px;
+  }
+  md-select{
+    height: 42px;
+  }
+.md-datepicker-open input.md-datepicker-input {
+
+    height: 42px;
+
+}
+
+}
+
+@media only screen and (min-width: 1024px){
+  md-select{
+    padding-top: 0px;
+  }
+  .md-button.md-icon-button {
+    margin: -5px 6px;
+  }
+}
+
+md-checkbox.md-checked .md-icon {
+    background-color: rgb(0, 124, 194);
+}
+
+
+/* END DATE PICKER CSS*/
+@media (max-width: 520px) {
+.spinner-app {
+      padding-top: 55%;
+}
+}
+@media all and (min-width: 640px) and (max-width:700px){
+.spinner-app {
+      padding-top: 35%;
+}
+}
+@media all and (min-width: 700px) and (max-width:900px){
+.spinner-app {
+      padding-top: 25%;
+}
+}
+@media all and (min-width: 520px) and (max-width:640px){
+  .spinner-app {
+      padding-top: 45%;
+}
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url"
+			value="jdbc:sqlserver://TREGUALEMUDESA;DatabaseName=Infinity" />
+		<property name="username" value="Adm_Infinity" />
+		<property name="password" value="Pass.#Infi0" />
+	</bean>
+
+	<bean id="appConfig" class="java.util.HashMap">
+		<constructor-arg index="0" type="java.util.Map">
+			<map key-type="java.lang.String" value-type="java.lang.String">
+				<entry key="LDAP_INITIAL_CONTEXT_FACTORY" value="com.sun.jndi.ldap.LdapCtxFactory" />
+				<entry key="LDAP_PROVIDER_URL" value="ldap://10.1.253.13:389" />
+				<entry key="LDAP_SECURITY_PROTOCOL" value="" />
+				<entry key="LDAP_SECURITY_AUTHENTICATION" value="simple" />
+
+			</map>
+		</constructor-arg>
+	</bean>
+
+
+	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
+	<bean id="hibernate3AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<!-- <property name="connection.datasource">java:jboss/datasources/OauthDS</property> -->
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>cl.kvz.provida.oauth2.admin.model.User</value>
+				<value>cl.kvz.provida.oauth2.admin.model.Grant</value>
+				<value>cl.kvz.provida.oauth2.admin.model.Uri</value>
+				<value>cl.kvz.provida.oauth2.admin.model.Client</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="cl.kvz.provida.oauth2.admin.dao.IUserDAO" class="cl.kvz.provida.oauth2.admin.dao.impl.UserDAOImpl">
+		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+	</bean>
+	<bean id="cl.kvz.provida.oauth2.admin.dao.IGrantDAO" class="cl.kvz.provida.oauth2.admin.dao.impl.GrantDAOImpl">
+		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+	</bean>
+	<bean id="cl.kvz.provida.oauth2.admin.dao.IClientDAO" class="cl.kvz.provida.oauth2.admin.dao.impl.ClientDAOImpl">
+		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+	</bean>
+</beans>

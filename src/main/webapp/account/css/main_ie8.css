@@ -1,0 +1,38 @@
+
+
+.fixed-navigation.active ul{ top: -10px; }
+
+.switch.s-active .checkbox-indicator{ background: #30b33f; position: absolute; left: 55px;  }
+
+
+input[type="checkbox"], input[type="radio"]{ display: block;  }
+
+input[type="radio"] {
+    background-color: inherit;
+    border: none !important;
+    border-radius: 0;
+    display: block;
+    float: left;
+    height: 18px;
+    margin-right: 10px;
+    position: relative;
+    width: 18px;
+}
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: none;
+    padding: 0;
+}
+
+.full-wrapp-label{ overflow: hidden; }
+
+.inline-element{ display: inline; }
+
+
+.mod-h-45.inner-wrapp{ height: 45px !important; min-height: 10px; padding: 0;  }
+.mod-h-45.third{ padding: 0 !important; }
+.mod-h-45 p{  margin: 0 0 0; line-height: 18px;  }
+.mod-height-auto{ height: auto !important; }
+
+/*.hidded{ display: none !important; opacity: 1; visibility: visible;  }*/
+/*.hidding-element .element-wrapp.active{ display: block !important; opacity: 1; overflow: hidden; position: relative; visibility: visible;    }*/
+/*.hidded.active{ display: block !important; }*/

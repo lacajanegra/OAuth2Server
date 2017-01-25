@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es-ES" ng-app="StarterApp">
+	<head>
+		<meta charset="utf-8">
+		<title>ProVida Box</title>
+		<meta name="description" content="Una compañía Metlife">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="theme-color" content="#007CC2" />
+		<link rel="shortcut icon" type="image/ico" href="images/icons/favicon.ico"/>
+		<link rel="stylesheet" href="css/main.css?=ver2">
+		<link rel="stylesheet" href="css/angular-material.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/libs/modernizr.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.js?=ver2"></script>
+		<script type="text/javascript" src="js/main.js?=ver2"></script>
+	</head>
+	<body ng-cloak>
+		<header>
+			<div class="top-nav blue-bg">
+				<div class="row">
+					<div class="cont-wrap ohidden">
+						<h1 class="logo-infinity">
+							ProVida Box 
+							<img src="images/logos/logo-infinity-white.png" class="header-logo" alt="Provida Box"/>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="row"  ng-controller="regInfinityCtrl">
+			<!-- <div class="spinner-app"  ng-show="isLoading" style="top:0; left:0"><md-progress-circular md-diameter="90" md-mode='indeterminate'  style="margin: 0 auto"> </md-progress-circular><div style="margin-top: 2em;font-weight: 400; font-size: 1.3em;">Espera</div></div> -->
+	 		<div class="spinner-app"  ng-show="isLoading" style="top:0; left:0;">
+
+	            <img width="86" alt="" src="images/icons/loader1-transparent.gif">
+	            <!-- <p class="cent-text marg-top-20 loader-text">Espera mientras se cargan tus datos</p> -->
+	            <p class="cent-text marg-top-20 loader-text">{{resquestState}}</p>
+
+	      	</div>
+
+			<div class="cont-wrap marg-top-40">
+				<div class="full ohidden marg-bottom-10">
+					<h2 class="main-title marg-bottom-20">Datos de mi cuenta Provida Box</h2>
+				</div>
+				<div class="red-disclaimer clearfix" ng-show="error.length">
+                          <!--<button type="button" class="close-lightbox" data-func="closeDisclaimer" type="button">X</button>-->
+                          <i class="icon-element red-alert inline-left to-the-left"></i>
+                          <p>{{error}}</p>
+                </div>
+                <div class="row">
+
+					<div class="message-box-action active with-alert marg-bottom-40" data-func="showMessage">
+						<div class="message-box-indicator">
+							<span class="line"></span>
+						</div>
+
+						<div class="acc-disclaimer w-46-percent">
+							<i class="icon-element small-yellow-alert inline-left to-the-left"></i>
+							<p>
+								Aún no tienes una cuenta activa.<br> Regístrate ahora.
+							</p>
+						</div>
+					</div>
+					<div class="content-general">
+						  <section class="mi-perfil">
+							    <div class="row">
+								      <div class="tabs">  
+									        <div class="tab active" data-index="0">
+											     <div class="full-conectados">
+											        <div class="message-box"> 
+											         	<div class="message-box-content active">
+											                <h3>¿Para qué sirve ProVida Box?</h3>
+											                <ul class="check-list marg-top-10">
+											                  <li><p>
+											                    <i class="icon-element check-single inline-left delay-animation delay-1" data-animate="zoomIn"></i>
+											                    Prodrás acceder en cualquier momento, desde tu celular o computador, a tus documentos previsionales y otros importantes para ti.
+											                  </p></li>
+											                  <li><p><i class="icon-element check-single inline-left delay-animation delay-2" data-animate="zoomIn"></i>
+											                   Comparte con quien tú quieras los archivos almacenados en tu cuenta. 
+											                  </p></li>
+											                  <li><p><i class="icon-element check-single inline-left delay-animation delay-3" data-animate="zoomIn"></i>
+											                   Suscribe notificaciones para estar al tanto de los movimientos de tus ahorros.
+											                  </p></li>
+											                </ul>
+											                <!-- {{emailForm.$error}} -->
+														<form name="emailForm" action="#" data-validate="normal" novalidate>
+														
+															<fieldset>
+																<div class="full ohidden to-the-left">
+																	<p>
+																		<strong>¿Tu email sigue siendo {{mail}}?</strong><br>
+																		<span class="light-text">
+																			<em>
+																				<span class="input-wrapp modify-cont relative-position">
+																						<input type="email" name="email" class="hidden-input" ng-model="mail" ng-pattern="emailPattern" ng-class="{'active': emailFlag == true}" ng-disabled="!emailFlag"  data-disable-img-error="true" data-func="inputEdit" required />
+																						<span class="icon-element remove-value" data-func="removeValue"></span>
+																				</span>
+																			</em>
+																			<a href="#" title="Modificar" class="bordered-link" data-func="inputEdit" data-target="email-newsletter" ng-show="!emailFlag" ng-click="emailModify()">Modificar email</a>
+
+																			<a ng-show="emailFlag" title="Modificar" class="bordered-link" data-func="inputEdit" data-target="email-newsletter" ng-click="!emailForm.email.$valid || emailModify('setEmail')" style="cursor:pointer; cursor:hand;">Guardar</a>
+
+																		
+																		</span>
+																	</p>
+																</div>
+															</fieldset>
+														</form>
+											             
+											          	</div>
+											        </div>
+											     </div>
+									        </div>  
+								      </div>
+							    </div>
+						  </section>
+					</div>
+            	</div>
+
+				<div class="full marg-top-30 to-the-left bordered-top w-835 marg-bottom-20">
+					
+					<div class="column-5 col small-6 full-640 pad-right-col">
+						<label class="form-cell full to-the-left marg-top-20">
+						<md-checkbox ng-model="reg.terms_and_conditions" aria-label="Términos y Condiciones" required>
+
+				          </md-checkbox>
+							<!-- <input type="checkbox" name="declaro" required /> -->
+							<span>Acepto los <a href="#" class="bordered-link  small-m prevent-default" title="Modal de Condiciones de uso" ng-click="showAdvanced($event)">Términos y Condiciones </a> de Provida Box</span>
+						</label>
+						
+					</div>
+					
+					<div class="column-5 col small-6 full-640 pad-right-col last">
+						
+						<div class="full to-the-left marg-top-10">
+							<button  ng-disabled="myFormRegister.$invalid" class="btn full-640 " ng-click="register()">Registrarme</button>
+							<a href="#" class="link white-640 full-640 cent-640 marg-left-20" title="Volver" onclick="window.history.back()">Volver</a>
+						</div>
+						
+					</div>
+					
+				</div>
+					
+			</div>
+		</div>
+		<!-- Angular And Angular Material Dependencies -->
+	    <script src="js/libs/angular/angular.min.js"></script>
+	    <script src="js/libs/angular-animate/angular-animate.min.js"></script>
+	    <script src="js/libs/angular-aria/angular-aria.min.js"></script>
+	    <script src="js/libs/angular-material/angular-material.min.js"></script>
+	    <!-- <script src="js/libs/angular-route/angular-route.min.js"></script> -->
+
+	    <script type="text/javascript" src="js/libs/device_info/ng-device-detector/ng-device-detector.min.js"></script>
+	    <script type="text/javascript" src="js/libs/device_info/re-tree/re-tree.min.js"></script>
+	    <script src="js/libs/angular-material-icons/angular-material-icons.min.js"></script> 
+	    <script src="js/libs/angular-soap/soapclient.js"></script>
+	    <script src="js/libs/angular-soap/angular.soap.js"></script>
+	    <script src="js/libs/angular-rut/rut.js"></script>
+	    <script src="js/libs/angular-cookies/angular-cookies.min.js"></script>
+	    <script src="js/libs/angular-moment/moment.js"></script>
+	    <script src="js/libs/angular-xmltojson/xml2json.min.js"></script>
+	    <script type="text/javascript" src="js/libs/pdfmake/pdfmake.min.js"></script>
+	    <script type="text/javascript" src="js/libs/pdfmake/vfs_fonts.js"></script>
+
+
+	    <script src="js/app.js"></script>
+	    <script src="js/controllers/registerInfinityController.js"></script> 
+	    <script src="js/utils/constants.js"></script>
+	</body>
+</html>
